@@ -6,7 +6,14 @@ type LeaderboardProps = {
 }
 
 export function Leaderboard({ scores, currentName }: LeaderboardProps) {
-  const top = scores.slice(0, 10)
+  const best = new Map<string, GameScore>()
+  for (const s of scores) {
+    const prev = best.get(s.name)
+    if (!prev || s.score > prev.score) best.set(s.name, s)
+  }
+  const top = Array.from(best.values())
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10)
 
   if (top.length === 0) {
     return (

@@ -46,13 +46,13 @@ function ChatBox() {
   }
 
   return (
-    <div className="pixel-card pointer-events-auto flex h-[360px] w-[min(88vw,320px)] flex-col bg-card">
-      <div className="flex items-center justify-between border-b-3 border-ink bg-aqua px-3 py-2">
+    <div className="pixel-card pointer-events-auto flex h-[clamp(420px,70vh,560px)] w-[min(92vw,420px)] flex-col bg-card">
+      <div className="flex items-center justify-between border-b-3 border-ink bg-aqua px-3 py-3">
         <span
-          className="text-[10px] text-paper"
+          className="text-xs text-paper"
           style={{ fontFamily: "var(--font-pixel)" }}
         >
-          CHAT
+          LIVE CHAT
         </span>
         <button
           type="button"
@@ -63,28 +63,50 @@ function ChatBox() {
           <X className="size-4" />
         </button>
       </div>
-      <div ref={listRef} className="flex-1 space-y-2 overflow-y-auto p-3">
+      <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto p-3">
         {chat.length === 0 ? (
-          <p className="text-base text-ink-soft">
-            Mulai obrolan. Ini ruang demo lokal.
+          <p className="text-lg text-ink-soft">
+            Mulai obrolan dengan peserta lain yang sedang online.
           </p>
         ) : (
-          chat.map((m) => (
-            <div
-              key={m.id}
-              className={m.system ? "text-left" : "text-right"}
-            >
-              <span
-                className={
-                  m.system
-                    ? "pixel-border inline-block max-w-[85%] bg-paper-2 px-2 py-1 text-left text-base text-ink"
-                    : "pixel-border inline-block max-w-[85%] bg-cyan px-2 py-1 text-left text-base text-ink"
-                }
+          chat.map((m) => {
+            const mine = !m.system && m.name === session?.name
+            if (m.system) {
+              return (
+                <div key={m.id} className="text-center">
+                  <span className="pixel-border inline-block bg-paper-2 px-2 py-1 text-base text-ink-soft">
+                    {m.text}
+                  </span>
+                </div>
+              )
+            }
+            return (
+              <div
+                key={m.id}
+                className={mine ? "flex flex-col items-end" : "flex flex-col items-start"}
               >
-                {m.text}
-              </span>
-            </div>
-          ))
+                <span
+                  className={
+                    mine
+                      ? "text-[9px] text-aqua-deep"
+                      : "text-[9px] text-ink-soft"
+                  }
+                  style={{ fontFamily: "var(--font-pixel)" }}
+                >
+                  {mine ? "kamu" : m.name}
+                </span>
+                <span
+                  className={
+                    mine
+                      ? "pixel-border mt-1 inline-block max-w-[85%] bg-cyan px-3 py-2 text-left text-lg text-ink"
+                      : "pixel-border mt-1 inline-block max-w-[85%] bg-paper-2 px-3 py-2 text-left text-lg text-ink"
+                  }
+                >
+                  {m.text}
+                </span>
+              </div>
+            )
+          })
         )}
       </div>
       <div className="flex items-center gap-2 border-t-3 border-ink p-2">
@@ -112,24 +134,10 @@ function ChatBox() {
 export function FloatingDock() {
   const muted = useAppStore((s) => s.muted)
   const toggleMute = useAppStore((s) => s.toggleMute)
-  const setOnline = useAppStore((s) => s.setOnline)
-  const onlineCount = useAppStore((s) => s.onlineCount)
   const chatOpen = useAppStore((s) => s.chatOpen)
   const chatUnread = useAppStore((s) => s.chatUnread)
   const setChatOpen = useAppStore((s) => s.setChatOpen)
   const sfx = useSfx()
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      const drift = Math.floor(Math.random() * 5) - 2
-      setOnline(useAppStore.getState().onlineCount + drift)
-    }, 6000)
-    return () => window.clearInterval(id)
-  }, [setOnline])
-
-  useEffect(() => {
-    setOnline(onlineCount + Math.floor(Math.random() * 7))
-  }, [])
 
   return (
     <>

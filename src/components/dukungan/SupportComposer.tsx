@@ -104,7 +104,7 @@ export function SupportComposer({ open, onOpenChange }: SupportComposerProps) {
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="pixel-card">
+        <DialogContent className="pixel-card z-[200] w-[min(92vw,560px)] sm:max-w-[560px]">
           <DialogHeader>
             <DialogTitle style={{ fontFamily: "var(--font-pixel)" }}>
               TULIS DUKUNGAN
@@ -118,7 +118,7 @@ export function SupportComposer({ open, onOpenChange }: SupportComposerProps) {
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
-      <DrawerContent className="pixel-card">
+      <DrawerContent className="pixel-card z-[200]">
         <DrawerHeader>
           <DrawerTitle style={{ fontFamily: "var(--font-pixel)" }}>
             TULIS DUKUNGAN

@@ -21,8 +21,10 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="scanline relative min-h-dvh">
       <AquariumBg />
-      <main className="relative z-10 mx-auto w-full max-w-[820px] px-4">
-        {children}
+      <main className="relative z-10 flex min-h-dvh w-full flex-col">
+        <div className="mx-auto my-auto w-full max-w-[820px] px-4 py-16">
+          {children}
+        </div>
       </main>
       <FloatingDock />
       <BootGate />
