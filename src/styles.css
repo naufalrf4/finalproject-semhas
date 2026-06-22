@@ -1,0 +1,260 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource/press-start-2p/400.css";
+@import "@fontsource/vt323/400.css";
+
+@custom-variant dark (&:is(.dark *));
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+@theme inline {
+  --font-pixel: "Press Start 2P", monospace;
+  --font-body: "VT323", monospace;
+  --font-heading: var(--font-pixel);
+  --font-sans: var(--font-body);
+
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-aqua: var(--aqua);
+  --color-aqua-deep: var(--aqua-deep);
+  --color-cyan: var(--cyan);
+  --color-gold: var(--gold);
+  --color-shadow-pixel: var(--shadow-pixel);
+  --color-danger: var(--danger);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  --ease-pixel: steps(5, end);
+}
+
+:root {
+  --paper: oklch(0.95 0.02 240);
+  --paper-2: oklch(0.9 0.04 240);
+  --ink: oklch(0.3 0.07 250);
+  --ink-soft: oklch(0.45 0.05 245);
+  --aqua: oklch(0.62 0.13 235);
+  --aqua-deep: oklch(0.5 0.13 245);
+  --cyan: oklch(0.78 0.12 220);
+  --gold: oklch(0.78 0.13 75);
+  --shadow-pixel: oklch(0.28 0.08 255);
+  --danger: oklch(0.58 0.2 20);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(0.98 0.01 240);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.98 0.01 240);
+  --popover-foreground: var(--ink);
+  --primary: var(--aqua);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--cyan);
+  --accent-foreground: var(--ink);
+  --destructive: var(--danger);
+  --border: var(--ink);
+  --input: var(--ink);
+  --ring: var(--aqua);
+  --chart-1: var(--aqua);
+  --chart-2: var(--cyan);
+  --chart-3: var(--aqua-deep);
+  --chart-4: var(--gold);
+  --chart-5: var(--ink-soft);
+  --radius: 0px;
+  --sidebar: oklch(0.98 0.01 240);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--aqua);
+  --sidebar-primary-foreground: oklch(0.98 0.01 240);
+  --sidebar-accent: var(--cyan);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--ink);
+  --sidebar-ring: var(--aqua);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    background-image:
+      linear-gradient(color-mix(in oklch, var(--aqua) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklch, var(--aqua) 8%, transparent) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  ::selection {
+    background: var(--cyan);
+    color: var(--ink);
+  }
+}
+
+@utility pixel-shadow {
+  box-shadow: 4px 4px 0 var(--shadow-pixel);
+}
+@utility pixel-shadow-lg {
+  box-shadow: 6px 6px 0 var(--shadow-pixel);
+}
+
+@layer components {
+  .pixel-border {
+    border: 3px solid var(--ink);
+  }
+  .pixel-card {
+    background: var(--card);
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--shadow-pixel);
+  }
+  .pixel-press {
+    transition:
+      transform 0.08s steps(2, end),
+      box-shadow 0.08s steps(2, end);
+  }
+  .pixel-press:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--shadow-pixel) !important;
+  }
+  .pixel-hover {
+    transition:
+      transform 0.1s steps(2, end),
+      box-shadow 0.1s steps(2, end);
+  }
+  .pixel-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--shadow-pixel);
+  }
+  .scanline::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      color-mix(in oklch, var(--shadow-pixel) 5%, transparent) 0 2px,
+      transparent 2px 4px
+    );
+    animation: scan 8s linear infinite;
+  }
+  .blink {
+    animation: blink 1s steps(1, end) infinite;
+  }
+}
+
+@keyframes scan {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 100px;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes pixel-rise {
+  0% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes pixel-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes pixel-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--aqua) 35%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+@keyframes pixel-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

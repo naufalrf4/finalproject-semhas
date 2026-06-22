@@ -1,0 +1,50 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Hasil &middot; Mekanisme Peringatan Dini</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <div class="reveal d2" style="flex:1;min-height:0;display:flex;flex-direction:column;padding-bottom:17cqh;gap:1.2cqh;margin-top:0;">
+
+      <!-- TOP: mechanism rule cards -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2cqw;align-items:stretch;">
+        <div class="infocard reveal d3">
+          <div class="iconchip"><svg><use href="#i-flow"/></svg></div>
+          <div><h3>RI <span style="font-style:italic;">rolling</span> 24 jam</h3><p>Indeks risiko dihitung pada jendela bergerak 24 jam terakhir.</p></div>
+        </div>
+        <div class="infocard reveal d3">
+          <div class="iconchip"><svg><use href="#i-target"/></svg></div>
+          <div><h3>Ambang RI &ge; 0,50</h3><p>Peringatan terpicu bila ambang bertahan selama durasi &ge; 3 jam.</p></div>
+        </div>
+        <div class="infocard reveal d3">
+          <div class="iconchip"><svg><use href="#i-shield"/></svg></div>
+          <div><h3><span style="font-style:italic;">Safeguard</span> pasif</h3><p>Aktif hanya saat kondisi air memburuk berkelanjutan.</p></div>
+        </div>
+      </div>
+
+      <!-- MIDDLE: honest result stats -->
+      <div style="display:flex;gap:1.2cqw;align-items:stretch;width:100%;">
+        <div class="stat reveal d4" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.6cqw;">0</span><span class="lab">periode terpicu selama 103 hari</span></div>
+        <div class="stat reveal d4" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.6cqw;">0,495</span><span class="lab">RI<sub>24j</sub> maksimum (di bawah ambang 0,50)</span></div>
+        <div class="stat reveal d4" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.6cqw;">78,64%</span><span class="lab">hari kategori Baik</span></div>
+      </div>
+
+      <!-- BOTTOM: honest interpretation -->
+      <div class="tile reveal d5" style="background:var(--surface-2);">
+        <div class="iconchip"><svg><use href="#i-check"/></svg></div>
+        <h3>Interpretasi yang jujur</h3>
+        <p style="font-size:1.35cqw;color:var(--ink-soft);line-height:1.6;margin:.4cqh 0 0;">
+          Tidak terdapat periode yang memenuhi ambang peringatan dini selama 103 hari pengamatan, konsisten dengan
+          dominasi kategori Baik (78,64% hari) dan RI<sub>24j</sub> maksimum yang hanya mencapai 0,495. Mekanisme ini
+          berfungsi sebagai <span style="font-style:italic;">safeguard</span> yang aktif apabila kondisi air memburuk
+          berkelanjutan, bukan klaim deteksi yang telah terbukti memicu.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+  </div>
+</section>

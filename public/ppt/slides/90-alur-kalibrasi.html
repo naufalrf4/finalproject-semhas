@@ -1,0 +1,62 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Sistem &middot; Alur Kalibrasi</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <!-- Six-step end-to-end calibration flow -->
+    <div class="flow reveal d2" style="flex:1;min-height:0;align-items:center;padding-bottom:17cqh;gap:.7cqw;flex-wrap:wrap;justify-content:center;">
+
+      <div class="node reveal d2" style="padding:1.8cqh 1cqw;gap:.5cqh;min-width:11cqw;">
+        <div class="nh" style="justify-content:center;height:4.2cqh;margin-bottom:.4cqh;"><svg style="width:2.4cqw;height:2.4cqw;color:var(--primary);"><use href="#i-news"/></svg></div>
+        <span class="nt" style="text-align:center;">Input form web</span>
+        <span class="ns" style="text-align:center;">Operator isi koefisien</span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node reveal d3" style="padding:1.8cqh 1cqw;gap:.5cqh;min-width:11cqw;">
+        <div class="nh" style="justify-content:center;height:4.2cqh;margin-bottom:.4cqh;"><svg style="width:2.4cqw;height:2.4cqw;color:var(--primary);"><use href="#i-layers"/></svg></div>
+        <span class="nt" style="text-align:center;">Tulis ke Firebase</span>
+        <span class="ns" style="text-align:center;">Realtime Database</span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node reveal d4" style="padding:1.8cqh 1cqw;gap:.5cqh;min-width:11cqw;">
+        <div class="nh" style="justify-content:center;height:4.2cqh;margin-bottom:.4cqh;"><svg style="width:2.4cqw;height:2.4cqw;color:var(--primary);"><use href="#i-flow"/></svg></div>
+        <span class="nt" style="text-align:center;">ESP32 ambil data</span>
+        <span class="ns" style="text-align:center;"><span style="font-style:italic;">Fetch</span> koefisien baru</span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node reveal d5" style="padding:1.8cqh 1cqw;gap:.5cqh;min-width:11cqw;">
+        <div class="nh" style="justify-content:center;height:4.2cqh;margin-bottom:.4cqh;"><svg style="width:2.4cqw;height:2.4cqw;color:var(--primary);"><use href="#i-gear"/></svg></div>
+        <span class="nt" style="text-align:center;">Simpan ke NVS</span>
+        <span class="ns" style="text-align:center;">Tahan <span style="font-style:italic;">reboot</span></span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node reveal d6" style="padding:1.8cqh 1cqw;gap:.5cqh;min-width:11cqw;">
+        <div class="nh" style="justify-content:center;height:4.2cqh;margin-bottom:.4cqh;"><svg style="width:2.4cqw;height:2.4cqw;color:var(--primary);"><use href="#i-spark"/></svg></div>
+        <span class="nt" style="text-align:center;">Konversi sensor</span>
+        <span class="ns" style="text-align:center;">Bacaan mentah &rarr; nilai</span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node reveal d7" style="padding:1.8cqh 1cqw;gap:.5cqh;min-width:11cqw;">
+        <div class="nh" style="justify-content:center;height:4.2cqh;margin-bottom:.4cqh;"><svg style="width:2.4cqw;height:2.4cqw;color:var(--primary);"><use href="#i-check"/></svg></div>
+        <span class="nt" style="text-align:center;">Verifikasi acuan</span>
+        <span class="ns" style="text-align:center;">Cek vs larutan standar</span>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+  </div>
+</section>

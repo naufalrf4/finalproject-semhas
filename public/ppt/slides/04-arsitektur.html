@@ -1,0 +1,58 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Metode &middot; Arsitektur Sistem</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <div class="reveal d2" style="display:flex;align-items:center;gap:1cqw;margin-bottom:1.2cqh;">
+      <img src="assets/elsaiot-icon.png" alt="ELSA" style="height:4.4cqh;width:auto;object-fit:contain;" />
+    </div>
+
+    <!-- Four-layer flow with tech logos -->
+    <div class="flow reveal d3" style="flex:1;min-height:0;align-items:center;padding-bottom:17cqh;gap:1cqw;">
+
+      <div class="node" style="padding:1.8cqh 1.2cqw;gap:.5cqh;">
+        <div class="nh" style="justify-content:center;height:5.4cqh;margin-bottom:.4cqh;">
+          <img src="assets/brand/espressif.svg" alt="Espressif" style="height:4cqh;width:auto;object-fit:contain;" />
+        </div>
+        <span class="nt" style="text-align:center;">Perangkat</span>
+        <span class="ns" style="text-align:center;">ESP32-S3 baca sensor tiap 5 detik; buffer LittleFS saat <span style="font-style:italic;">offline</span></span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node" style="padding:1.8cqh 1.2cqw;gap:.5cqh;">
+        <div class="nh" style="justify-content:center;height:5.4cqh;margin-bottom:.4cqh;">
+          <img src="assets/brand/firebase.svg" alt="Firebase" style="height:4cqh;width:auto;object-fit:contain;" />
+        </div>
+        <span class="nt" style="text-align:center;">Komunikasi</span>
+        <span class="ns" style="text-align:center;">Firebase Realtime Database; kanal pembaruan parameter kalibrasi</span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node" style="padding:1.8cqh 1.2cqw;gap:.5cqh;">
+        <div class="nh" style="justify-content:center;height:5.4cqh;margin-bottom:.4cqh;">
+          <img src="assets/brand/nextjs.svg" alt="Next.js" style="height:3.6cqh;width:auto;object-fit:contain;" />
+        </div>
+        <span class="nt" style="text-align:center;">Aplikasi</span>
+        <span class="ns" style="text-align:center;">Next.js: <span style="font-style:italic;">backend</span>, <span style="font-style:italic;">scheduler</span>, API, <span style="font-style:italic;">dashboard</span></span>
+      </div>
+
+      <div class="arrowcol"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></div>
+
+      <div class="node" style="padding:1.8cqh 1.2cqw;gap:.5cqh;">
+        <div class="nh" style="justify-content:center;height:5.4cqh;margin-bottom:.4cqh;">
+          <img src="assets/brand/postgresql.svg" alt="TimescaleDB" style="height:4cqh;width:auto;object-fit:contain;" />
+        </div>
+        <span class="nt" style="text-align:center;">Penyimpanan</span>
+        <span class="ns" style="text-align:center;">Firestore (cuplikan 30 dtk) + TimescaleDB (arsip deret waktu)</span>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+  </div>
+</section>
