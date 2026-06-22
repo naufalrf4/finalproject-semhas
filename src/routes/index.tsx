@@ -61,7 +61,7 @@ function Home() {
   }
 
   return (
-    <section className="flex min-h-dvh w-full flex-col items-center justify-center gap-10 px-4 py-12">
+    <section className="flex w-full flex-col items-center gap-10 px-4">
       <header className="flex w-full max-w-3xl flex-col items-center gap-4 text-center animate-[pixel-rise_0.4s_ease-out_both]">
         <h1
           className="whitespace-nowrap text-aqua text-base sm:text-xl"
