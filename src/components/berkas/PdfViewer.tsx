@@ -1,10 +1,7 @@
 import {
   ArrowLeft,
   Download,
-  Maximize2,
-  Minimize2,
   RotateCw,
-  X,
   ZoomIn,
   ZoomOut,
 } from "lucide-react"
@@ -36,7 +33,6 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
   const [scale, setScale] = useState(1)
   const [loading, setLoading] = useState(true)
   const [failed, setFailed] = useState(false)
-  const [fullscreen, setFullscreen] = useState(false)
   const [reloadKey, setReloadKey] = useState(0)
 
   const onLoadSuccess = useCallback(({ numPages: total }: { numPages: number }) => {
@@ -74,21 +70,16 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
     sfx("tick")
     setScale((s) => Math.max(ZOOM_MIN, s - ZOOM_STEP))
   }
-  const toggleFullscreen = () => {
-    sfx("open")
-    setFullscreen((v) => !v)
-  }
 
   useEffect(() => {
-    if (!fullscreen) return
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setFullscreen(false)
-      if (e.key === "ArrowLeft") goPrev()
-      if (e.key === "ArrowRight") goNext()
+      if (e.key === "ArrowLeft") setPageNumber((p) => Math.max(1, p - 1))
+      if (e.key === "ArrowRight")
+        setPageNumber((p) => Math.min(numPages || 1, p + 1))
     }
     window.addEventListener("keydown", onKey)
     return () => window.removeEventListener("keydown", onKey)
-  })
+  }, [numPages])
 
   const skeleton = (
     <div className="grid h-[60vh] w-full place-items-center bg-paper-2 pixel-border">
@@ -196,95 +187,12 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
         >
           <Download className="h-4 w-4" />
         </a>
-        <button
-          type="button"
-          onClick={toggleFullscreen}
-          aria-label={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
-          className="pixel-card pixel-press grid h-9 w-9 place-items-center bg-paper text-ink"
-        >
-          {fullscreen ? (
-            <Minimize2 className="h-4 w-4" />
-          ) : (
-            <Maximize2 className="h-4 w-4" />
-          )}
-        </button>
       </div>
     </div>
   )
-
-  const docArea = (
-    <div className="flex justify-center overflow-auto bg-paper-2 p-4 pixel-border">
-      <Document
-        key={reloadKey}
-        file={src}
-        onLoadSuccess={onLoadSuccess}
-        onLoadError={onLoadError}
-        loading={skeleton}
-        error={errorBox}
-        className="flex justify-center"
-      >
-        {!failed && !loading ? (
-          <div className="pixel-shadow">
-            <Page
-              pageNumber={pageNumber}
-              scale={scale}
-              renderAnnotationLayer
-              renderTextLayer
-            />
-          </div>
-        ) : null}
-      </Document>
-    </div>
-  )
-
-  if (fullscreen) {
-    return (
-      <div className="fixed inset-0 z-[120] flex flex-col gap-3 bg-paper p-4">
-        <div className="flex items-center justify-between gap-3">
-          <span
-            className="text-aqua-deep"
-            style={{ fontFamily: "var(--font-pixel)", fontSize: "0.7rem" }}
-          >
-            {title}
-          </span>
-          <button
-            type="button"
-            onClick={toggleFullscreen}
-            aria-label="Tutup layar penuh"
-            className="pixel-card pixel-press grid h-10 w-10 place-items-center bg-card text-ink"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-        {toolbar}
-        <div className="flex flex-1 justify-center overflow-auto bg-paper-2 p-4 pixel-border">
-          <Document
-            key={reloadKey}
-            file={src}
-            onLoadSuccess={onLoadSuccess}
-            onLoadError={onLoadError}
-            loading={skeleton}
-            error={errorBox}
-            className="flex justify-center"
-          >
-            {!failed && !loading ? (
-              <div className="pixel-shadow">
-                <Page
-                  pageNumber={pageNumber}
-                  scale={scale}
-                  renderAnnotationLayer
-                  renderTextLayer
-                />
-              </div>
-            ) : null}
-          </Document>
-        </div>
-      </div>
-    )
-  }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="fixed inset-0 z-[120] flex flex-col gap-3 bg-paper p-3 sm:p-4">
       <div className="flex items-center justify-between gap-3">
         <Link
           to="/berkas"
@@ -297,13 +205,34 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
         </Link>
         <h1
           className="text-aqua-deep"
-          style={{ fontFamily: "var(--font-pixel)", fontSize: "0.8rem" }}
+          style={{ fontFamily: "var(--font-pixel)", fontSize: "0.75rem" }}
         >
           {title}
         </h1>
       </div>
       {toolbar}
-      {docArea}
+      <div className="flex flex-1 justify-center overflow-auto bg-paper-2 p-4 pixel-border">
+        <Document
+          key={reloadKey}
+          file={src}
+          onLoadSuccess={onLoadSuccess}
+          onLoadError={onLoadError}
+          loading={skeleton}
+          error={errorBox}
+          className="flex justify-center"
+        >
+          {!failed && !loading ? (
+            <div className="pixel-shadow">
+              <Page
+                pageNumber={pageNumber}
+                scale={scale}
+                renderAnnotationLayer
+                renderTextLayer
+              />
+            </div>
+          ) : null}
+        </Document>
+      </div>
     </div>
   )
 }
