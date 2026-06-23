@@ -18,6 +18,7 @@ type GameState = {
   water: number
   score: number
   timeLeft: number
+  picked: string[]
 }
 
 type GameAction =
@@ -42,6 +43,7 @@ function initRound(round: number, score: number, water: number): GameState {
     water,
     score,
     timeLeft: time,
+    picked: [],
   }
 }
 
@@ -53,7 +55,10 @@ const INITIAL: GameState = {
   water: WATER_MAX,
   score: 0,
   timeLeft: ROUND_TIME_MS[0],
+  picked: [],
 }
+
+const TICK_MS = 100
 
 function reducer(state: GameState, action: GameAction): GameState {
   switch (action.type) {
@@ -61,30 +66,39 @@ function reducer(state: GameState, action: GameAction): GameState {
       return initRound(0, 0, WATER_MAX)
     case "add": {
       if (state.phase !== "playing") return state
+      if (state.picked.includes(action.item.id)) return state
+      const picked = [...state.picked, action.item.id]
       const total = state.total + action.item.points
       if (total === state.target) {
         const bonus = Math.ceil(state.timeLeft / 1000)
         return {
           ...state,
           total,
+          picked,
           phase: "cleared",
-          score: state.score + 10 + bonus,
+          score: state.score + 10 + bonus + state.round * 2,
         }
       }
       if (total > state.target) {
         const water = state.water - 1
-        if (water <= 0) return { ...state, total, water: 0, phase: "over" }
-        return { ...state, total, water }
+        if (water <= 0) return { ...state, total, picked, water: 0, phase: "over" }
+        return { ...state, total, picked, water }
       }
-      return { ...state, total }
+      return { ...state, total, picked }
     }
     case "tick": {
       if (state.phase !== "playing") return state
-      const timeLeft = state.timeLeft - 250
+      const timeLeft = state.timeLeft - TICK_MS
       if (timeLeft <= 0) {
         const water = state.water - 1
         if (water <= 0) return { ...state, timeLeft: 0, water: 0, phase: "over" }
-        return { ...state, timeLeft: roundConfig(state.round).time, water, total: 0 }
+        return {
+          ...state,
+          timeLeft: roundConfig(state.round).time,
+          water,
+          total: 0,
+          picked: [],
+        }
       }
       return { ...state, timeLeft }
     }
@@ -102,7 +116,7 @@ export function useFeedGame() {
 
   useEffect(() => {
     if (state.phase !== "playing") return
-    const id = window.setInterval(() => dispatch({ type: "tick" }), 250)
+    const id = window.setInterval(() => dispatch({ type: "tick" }), TICK_MS)
     return () => window.clearInterval(id)
   }, [state.phase, state.round])
 

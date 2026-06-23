@@ -12,7 +12,7 @@ export function GamePageBody() {
   const sfx = useSfx()
   const session = useAppStore((s) => s.session)
   const [scores, setScores] = useState<GameScore[]>([])
-  const { state, start, add, next, reset, foods, skim } = useFeedGame()
+  const { state, start, add, next, reset, foods, skim, waterMax } = useFeedGame()
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export function GamePageBody() {
           </p>
         </header>
 
-        <Tank water={state.water} waterMax={5} happy={state.phase !== "over"} />
+        <Tank water={state.water} waterMax={waterMax} happy={state.phase !== "over"} />
 
         {state.phase === "idle" ? (
           <button
@@ -99,28 +99,32 @@ export function GamePageBody() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {foods.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => {
-                    sfx("tick")
-                    add(item)
-                  }}
-                  className="pixel-card pixel-press flex flex-col items-center gap-1 px-2 py-3 text-ink"
-                >
-                  <span className="text-lg" style={{ fontFamily: "var(--font-pixel)" }}>
-                    {item.icon}
-                  </span>
-                  <span className="text-sm">{item.label}</span>
-                  <span
-                    className="text-xs text-aqua"
-                    style={{ fontFamily: "var(--font-pixel)" }}
+              {foods.map((item) => {
+                const used = state.picked.includes(item.id)
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    disabled={used}
+                    onClick={() => {
+                      sfx("tick")
+                      add(item)
+                    }}
+                    className="pixel-card pixel-press flex flex-col items-center gap-1 px-2 py-3 text-ink disabled:opacity-40"
                   >
-                    +{item.points}
-                  </span>
-                </button>
-              ))}
+                    <span className="text-lg" style={{ fontFamily: "var(--font-pixel)" }}>
+                      {item.icon}
+                    </span>
+                    <span className="text-sm">{item.label}</span>
+                    <span
+                      className="text-xs text-aqua"
+                      style={{ fontFamily: "var(--font-pixel)" }}
+                    >
+                      +{item.points}
+                    </span>
+                  </button>
+                )
+              })}
               <button
                 type="button"
                 onClick={() => {
