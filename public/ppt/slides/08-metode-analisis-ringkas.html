@@ -6,57 +6,77 @@
       <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
     </div>
 
-    <div class="reveal d2" style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding-bottom:17cqh;">
+    <!-- 3-col × 3-row card grid, last row has 1 card centered -->
+    <div class="reveal d2" style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1cqw 1.3cqw;align-content:center;padding-bottom:17cqh;">
 
-      <table class="dtable reveal d2" style="font-size:1.7cqw;">
-        <thead>
-          <tr>
-            <th style="width:32%;">Metode</th>
-            <th style="width:36%;">Tujuan</th>
-            <th style="width:32%;">Parameter kunci</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="reveal d3">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-news"/></svg></span>Statistik deskriptif</td>
-            <td>Ringkasan parameter</td>
-            <td><span class="pill">pH&middot;DO&middot;suhu&middot;TDS</span></td>
-          </tr>
-          <tr class="reveal d3">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-spark"/></svg></span>Pola temporal</td>
-            <td>Periodisitas harian</td>
-            <td><span class="pill">FFT, ACF</span></td>
-          </tr>
-          <tr class="reveal d4">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-layers"/></svg></span>Korelasi</td>
-            <td>Keterkaitan parameter</td>
-            <td><span class="pill">Pearson, Spearman</span></td>
-          </tr>
-          <tr class="reveal d4">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-flow"/></svg></span>Titik perubahan</td>
-            <td>Pergeseran rezim</td>
-            <td><span class="pill">PELT</span></td>
-          </tr>
-          <tr class="reveal d5">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-shield"/></svg></span>Anomali konsensus</td>
-            <td>Deteksi outlier</td>
-            <td><span class="pill">3 metode</span></td>
-          </tr>
-          <tr class="reveal d5">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-target"/></svg></span><span style="font-style:italic;">Feature importance</span></td>
-            <td>Kontribusi RI</td>
-            <td><span class="pill"><span style="font-style:italic;">Random Forest</span></span></td>
-          </tr>
-          <tr class="reveal d6">
-            <td class="lead-cell"><span class="iconchip" style="margin-right:.9cqw;"><svg><use href="#i-gear"/></svg></span>Sensitivitas bobot</td>
-            <td>Kestabilan kategori</td>
-            <td><span class="pill"><span style="font-style:italic;">One-at-a-time</span> &plusmn;20%</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Row 1 -->
+      <div class="infocard reveal d3" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-news"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Statistik deskriptif</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Ringkasan parameter</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">pH · DO · suhu · TDS</span>
+      </div>
+
+      <div class="infocard reveal d3" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Pola temporal</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Periodisitas harian</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">FFT, ACF</span>
+      </div>
+
+      <div class="infocard reveal d3" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-layers"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Korelasi</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Keterkaitan parameter</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">Pearson, Spearman</span>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="infocard reveal d4" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-flow"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Titik perubahan</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Pergeseran rezim</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">PELT</span>
+      </div>
+
+      <div class="infocard reveal d4" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-shield"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Anomali konsensus</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Deteksi outlier</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">3 metode</span>
+      </div>
+
+      <div class="infocard reveal d4" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-target"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);font-style:italic;">Feature importance</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Kontribusi RI</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;font-style:italic;">Random Forest</span>
+      </div>
+
+      <!-- Row 3: 1 card centered via col-span trick -->
+      <div class="infocard reveal d5" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;grid-column:1 / span 3;max-width:34%;justify-self:center;width:100%;">
+        <div style="display:flex;align-items:center;gap:.7cqw;">
+          <div class="iconchip"><svg><use href="#i-gear"/></svg></div>
+          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Sensitivitas bobot</span>
+        </div>
+        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Kestabilan kategori</p>
+        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;"><span style="font-style:italic;">One-at-a-time</span> &plusmn;20%</span>
+      </div>
 
     </div>
 
-    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+    <div class="foot-img reveal d5"><img src="assets/footer-1.png" alt="" /></div>
   </div>
 </section>
