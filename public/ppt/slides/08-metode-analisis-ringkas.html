@@ -6,73 +6,55 @@
       <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
     </div>
 
-    <!-- 3-col × 3-row card grid, last row has 1 card centered -->
-    <div class="reveal d2" style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1cqw 1.3cqw;align-content:center;padding-bottom:17cqh;">
+    <!-- Analysis pipeline: input -> 3 method families -> output -->
+    <div class="reveal d2" style="flex:1;min-height:0;display:grid;grid-template-columns:0.85fr auto 2fr auto 0.85fr;align-items:center;gap:1cqw;padding-bottom:17cqh;">
 
-      <!-- Row 1 -->
-      <div class="infocard reveal d3" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-news"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Statistik deskriptif</span>
-        </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Ringkasan parameter</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">pH · DO · suhu · TDS</span>
+      <!-- INPUT -->
+      <div class="reveal d2" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1cqh;background:var(--primary);border-radius:var(--radius-lg);padding:2cqh 1cqw;color:#fff;">
+        <div class="iconchip" style="background:rgba(255,255,255,0.15);color:#fff;"><svg><use href="#i-db"/></svg></div>
+        <div style="font-family:var(--font-head);font-weight:700;font-size:1.5cqw;">Deret waktu harian</div>
+        <div style="font-size:1.15cqw;color:rgba(255,255,255,0.82);line-height:1.4;">pH &middot; DO &middot; Suhu &middot; TDS<br/>103 hari</div>
       </div>
 
-      <div class="infocard reveal d3" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Pola temporal</span>
+      <div style="display:flex;align-items:center;color:var(--accent);"><svg style="width:2.4cqw;height:2.4cqw;"><use href="#i-arrow"/></svg></div>
+
+      <!-- 3 METHOD FAMILIES -->
+      <div style="display:flex;flex-direction:column;gap:1cqh;height:100%;justify-content:center;">
+
+        <div class="reveal d3" style="display:flex;align-items:center;gap:1cqw;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:var(--radius);padding:1.2cqh 1.2cqw;">
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.35cqw;width:11cqw;flex:none;">Karakterisasi</div>
+          <div style="display:flex;gap:.7cqw;flex-wrap:wrap;">
+            <span class="badge"><svg><use href="#i-news"/></svg>Statistik deskriptif</span>
+            <span class="badge"><svg><use href="#i-layers"/></svg>Korelasi &middot; Pearson, Spearman</span>
+          </div>
         </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Periodisitas harian</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">FFT, ACF</span>
+
+        <div class="reveal d4" style="display:flex;align-items:center;gap:1cqw;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:var(--radius);padding:1.2cqh 1.2cqw;">
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.35cqw;width:11cqw;flex:none;">Analisis temporal</div>
+          <div style="display:flex;gap:.7cqw;flex-wrap:wrap;">
+            <span class="badge"><svg><use href="#i-spark"/></svg>Pola temporal &middot; FFT, ACF</span>
+            <span class="badge"><svg><use href="#i-flow"/></svg>Titik perubahan &middot; PELT</span>
+            <span class="badge"><svg><use href="#i-shield"/></svg>Anomali &middot; 3 metode</span>
+          </div>
+        </div>
+
+        <div class="reveal d5" style="display:flex;align-items:center;gap:1cqw;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.2cqh 1.2cqw;">
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.35cqw;width:11cqw;flex:none;">Validasi indeks</div>
+          <div style="display:flex;gap:.7cqw;flex-wrap:wrap;">
+            <span class="badge"><svg><use href="#i-target"/></svg><span style="font-style:italic;">Feature importance</span> &middot; <span style="font-style:italic;">Random Forest</span></span>
+            <span class="badge"><svg><use href="#i-gear"/></svg>Sensitivitas &plusmn;20%</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="infocard reveal d3" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-layers"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Korelasi</span>
-        </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Keterkaitan parameter</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">Pearson, Spearman</span>
-      </div>
+      <div style="display:flex;align-items:center;color:var(--accent);"><svg style="width:2.4cqw;height:2.4cqw;"><use href="#i-arrow"/></svg></div>
 
-      <!-- Row 2 -->
-      <div class="infocard reveal d4" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-flow"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Titik perubahan</span>
-        </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Pergeseran rezim</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">PELT</span>
-      </div>
-
-      <div class="infocard reveal d4" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-shield"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Anomali konsensus</span>
-        </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Deteksi outlier</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;">3 metode</span>
-      </div>
-
-      <div class="infocard reveal d4" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-target"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);font-style:italic;">Feature importance</span>
-        </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Kontribusi RI</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;font-style:italic;">Random Forest</span>
-      </div>
-
-      <!-- Row 3: 1 card centered via col-span trick -->
-      <div class="infocard reveal d5" style="flex-direction:column;gap:.5cqh;padding:1.1cqh 1.2cqw;grid-column:1 / span 3;max-width:34%;justify-self:center;width:100%;">
-        <div style="display:flex;align-items:center;gap:.7cqw;">
-          <div class="iconchip"><svg><use href="#i-gear"/></svg></div>
-          <span style="font-weight:600;font-size:1.45cqw;color:var(--ink);">Sensitivitas bobot</span>
-        </div>
-        <p style="font-size:1.15cqw;color:var(--ink-soft);margin:0;">Kestabilan kategori</p>
-        <span class="pill" style="align-self:flex-start;font-size:1.05cqw;"><span style="font-style:italic;">One-at-a-time</span> &plusmn;20%</span>
+      <!-- OUTPUT -->
+      <div class="reveal d5" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1cqh;background:var(--accent);border-radius:var(--radius-lg);padding:2cqh 1cqw;color:#fff;">
+        <div class="iconchip" style="background:rgba(255,255,255,0.18);color:#fff;"><svg><use href="#i-target"/></svg></div>
+        <div style="font-family:var(--font-head);font-weight:700;font-size:1.5cqw;">Indeks Risiko</div>
+        <div style="font-size:1.15cqw;color:rgba(255,255,255,0.85);line-height:1.4;">+ temuan pola,<br/>anomali &amp; rezim</div>
       </div>
 
     </div>

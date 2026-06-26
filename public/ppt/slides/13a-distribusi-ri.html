@@ -11,13 +11,34 @@
       <!-- TOP: distribution stats + summary -->
       <div style="display:flex;gap:1.6cqw;align-items:stretch;width:100%;">
 
-        <!-- LEFT: 3 category stats -->
-        <div style="display:flex;flex-direction:column;gap:.8cqh;flex:none;">
-          <div style="display:flex;gap:.8cqw;">
-            <div class="stat" style="padding:1.1cqh 1cqw;align-items:center;text-align:center;min-width:11cqw;"><span class="big" style="font-size:2.5cqw;"><em style="color:#16A34A;">81</em></span><span class="lab">hari <span style="color:#16A34A;font-weight:600;">Baik</span> (78,64%)</span></div>
-            <div class="stat" style="padding:1.1cqh 1cqw;align-items:center;text-align:center;min-width:11cqw;"><span class="big" style="font-size:2.5cqw;"><em style="color:#EAB308;">22</em></span><span class="lab">hari <span style="color:#EAB308;font-weight:600;">Waspada</span> (21,36%)</span></div>
+        <!-- LEFT: donut distribution -->
+        <div class="reveal d3" style="display:flex;align-items:center;gap:1.3cqw;flex:none;">
+          <svg viewBox="0 0 36 36" style="width:13cqw;height:auto;font-family:Arial,Helvetica,sans-serif;" role="img" aria-label="Distribusi kategori indeks risiko: Baik 78,64 persen, Waspada 21,36 persen, Berisiko 0 persen">
+            <circle cx="18" cy="18" r="15.9155" fill="none" stroke="var(--surface-2)" stroke-width="4" />
+            <g transform="rotate(-90 18 18)">
+              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#16A34A" stroke-width="4" stroke-dasharray="78.64 21.36" stroke-dashoffset="0" />
+              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#EAB308" stroke-width="4" stroke-dasharray="21.36 78.64" stroke-dashoffset="-78.64" />
+            </g>
+            <text x="18" y="17.2" text-anchor="middle" font-size="6.4" font-weight="700" fill="#16A34A">78,64%</text>
+            <text x="18" y="22" text-anchor="middle" font-size="2.8" fill="#444466">kategori Baik</text>
+          </svg>
+          <div style="display:flex;flex-direction:column;gap:.8cqh;">
+            <div style="display:flex;align-items:center;gap:.7cqw;">
+              <span style="width:1.2cqw;height:1.2cqw;border-radius:.3cqw;background:#16A34A;flex:none;"></span>
+              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">81</span>
+              <span style="color:var(--muted);font-size:1.2cqw;">hari Baik &middot; 78,64%</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.7cqw;">
+              <span style="width:1.2cqw;height:1.2cqw;border-radius:.3cqw;background:#EAB308;flex:none;"></span>
+              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">22</span>
+              <span style="color:var(--muted);font-size:1.2cqw;">hari Waspada &middot; 21,36%</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.7cqw;">
+              <span style="width:1.2cqw;height:1.2cqw;border-radius:.3cqw;background:#DC2626;flex:none;"></span>
+              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">0</span>
+              <span style="color:var(--muted);font-size:1.2cqw;">hari Berisiko &middot; 0%</span>
+            </div>
           </div>
-          <div class="stat" style="padding:1.1cqh 1cqw;align-items:center;text-align:center;"><span class="big" style="font-size:2.5cqw;"><em style="color:#DC2626;">0</em></span><span class="lab">hari <span style="color:#DC2626;font-weight:600;">Berisiko</span> (0%)</span></div>
         </div>
 
         <!-- RIGHT: summary infocards -->

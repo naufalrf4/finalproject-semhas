@@ -6,68 +6,55 @@
       <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
     </div>
 
-    <div class="reveal d2" style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:1.4cqh;padding-bottom:17cqh;">
+    <div class="reveal d2" style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:2cqh;padding-bottom:17cqh;">
 
-      <!-- Row 1: 3 KPI stat cards -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2cqw;">
-        <div class="infocard reveal d3" style="flex-direction:column;align-items:flex-start;gap:.4cqh;padding:1.1cqh 1.2cqw;">
-          <div class="iconchip"><svg><use href="#i-cal"/></svg></div>
-          <div>
-            <h3 style="font-size:1.7cqw;">103 hari kontinu</h3>
-            <p>Pengamatan tunggal 1 Des 2025 – 13 Mar 2026 tanpa jeda.</p>
-          </div>
+      <!-- HERO: data acquisition pipeline -->
+      <div class="reveal d3" style="display:flex;align-items:stretch;gap:.7cqw;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.7cqh;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.8cqh 1cqw;">
+          <div class="iconchip"><svg><use href="#i-gear"/></svg></div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">4 sensor</div>
+          <div style="font-size:1.1cqw;color:var(--muted);line-height:1.35;">pH &middot; TDS &middot; DO &middot; Suhu</div>
         </div>
-        <div class="infocard reveal d3" style="flex-direction:column;align-items:flex-start;gap:.4cqh;padding:1.1cqh 1.2cqw;">
-          <div class="iconchip"><svg><use href="#i-target"/></svg></div>
-          <div>
-            <h3 style="font-size:1.7cqw;">Satu akuarium diskus</h3>
-            <p>Volume 100 L, populasi terkendali, lingkungan terkontrol.</p>
-          </div>
+
+        <div style="display:flex;align-items:center;color:var(--accent);"><svg style="width:2.2cqw;height:2.2cqw;"><use href="#i-arrow"/></svg></div>
+
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.7cqh;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.8cqh 1cqw;">
+          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Tiap 30 detik</div>
+          <div style="font-size:1.1cqw;color:var(--muted);line-height:1.35;">kadens perekaman</div>
         </div>
-        <div class="infocard reveal d3" style="flex-direction:column;align-items:flex-start;gap:.4cqh;padding:1.1cqh 1.2cqw;">
-          <div class="iconchip"><svg><use href="#i-news"/></svg></div>
-          <div>
-            <h3 style="font-size:1.7cqw;font-style:italic;">Event log</h3>
-            <p>Pakan, penggantian air, dan kematian ikan dicatat manual.</p>
-          </div>
+
+        <div style="display:flex;align-items:center;color:var(--accent);"><svg style="width:2.2cqw;height:2.2cqw;"><use href="#i-arrow"/></svg></div>
+
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.7cqh;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.8cqh 1cqw;">
+          <div class="iconchip"><svg><use href="#i-db"/></svg></div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Deret waktu</div>
+          <div style="font-size:1.1cqw;color:var(--muted);line-height:1.35;">disimpan kontinu</div>
+        </div>
+
+        <div style="display:flex;align-items:center;color:var(--accent);"><svg style="width:2.2cqw;height:2.2cqw;"><use href="#i-arrow"/></svg></div>
+
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.7cqh;background:var(--primary);border-radius:var(--radius-lg);padding:1.8cqh 1cqw;color:#fff;">
+          <div class="iconchip" style="background:rgba(255,255,255,0.15);color:#fff;"><svg><use href="#i-layers"/></svg></div>
+          <div style="font-family:var(--font-head);font-weight:700;font-size:1.5cqw;">Rerata harian</div>
+          <div style="font-size:1.1cqw;color:rgba(255,255,255,0.82);line-height:1.35;">basis analisis</div>
         </div>
       </div>
 
-      <!-- Row 2: Cadence tile + Aggregation scheme -->
-      <div class="reveal d4" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:1.2cqw;align-items:start;">
-
-        <!-- Left: cadence tile -->
-        <div class="tile" style="background:var(--surface-2);gap:.6cqh;">
-          <div style="display:flex;align-items:center;gap:.7cqw;">
-            <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
-            <h3 style="font-size:1.55cqw;">Kadens perekaman 30 detik</h3>
-          </div>
-          <p style="font-size:1.2cqw;color:var(--ink-soft);line-height:1.55;margin:0;">
-            Empat parameter direkam tiap 30 detik lalu diagregasi ke rerata harian untuk analisis.
-          </p>
-          <div style="display:flex;gap:.8cqw;flex-wrap:wrap;margin-top:.3cqh;">
-            <span class="badge solid">pH</span>
-            <span class="badge solid">TDS</span>
-            <span class="badge solid">DO</span>
-            <span class="badge solid">Suhu</span>
-          </div>
+      <!-- SUPPORTING: design facts strip -->
+      <div class="reveal d4" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2cqw;">
+        <div class="infocard" style="gap:1cqw;padding:1.4cqh 1.2cqw;">
+          <div class="iconchip"><svg><use href="#i-cal"/></svg></div>
+          <div><h3 style="font-size:1.55cqw;">103 hari kontinu</h3><p>1 Des 2025 &ndash; 13 Mar 2026, tanpa jeda.</p></div>
         </div>
-
-        <!-- Right: aggregation flow -->
-        <div class="reveal d5" style="display:flex;flex-direction:column;gap:.9cqh;padding:1.1cqh 1.2cqw;background:var(--surface-2);border-radius:var(--radius);">
-          <div style="display:flex;align-items:center;gap:.7cqw;">
-            <div class="iconchip"><svg><use href="#i-layers"/></svg></div>
-            <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Skema Agregasi</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:.6cqw;flex-wrap:wrap;">
-            <div style="background:var(--surface);border-radius:var(--radius);padding:.6cqh .9cqw;font-size:1.2cqw;font-weight:600;color:var(--ink);">Cuplikan 30 s</div>
-            <span style="color:var(--primary);font-size:1.5cqw;font-weight:700;">&#8594;</span>
-            <div style="background:var(--surface);border-radius:var(--radius);padding:.6cqh .9cqw;font-size:1.2cqw;font-weight:600;color:var(--ink);">Deret waktu</div>
-            <span style="color:var(--primary);font-size:1.5cqw;font-weight:700;">&#8594;</span>
-            <div style="background:var(--primary);border-radius:var(--radius);padding:.6cqh .9cqw;font-size:1.2cqw;font-weight:600;color:#fff;">Rerata harian</div>
-          </div>
+        <div class="infocard" style="gap:1cqw;padding:1.4cqh 1.2cqw;">
+          <div class="iconchip"><svg><use href="#i-target"/></svg></div>
+          <div><h3 style="font-size:1.55cqw;">Satu akuarium diskus</h3><p>Volume 100 L, lingkungan terkontrol.</p></div>
         </div>
-
+        <div class="infocard" style="gap:1cqw;padding:1.4cqh 1.2cqw;">
+          <div class="iconchip"><svg><use href="#i-news"/></svg></div>
+          <div><h3 style="font-size:1.55cqw;"><span style="font-style:italic;">Event log</span></h3><p>Pakan, penggantian air, kematian dicatat.</p></div>
+        </div>
       </div>
 
     </div>

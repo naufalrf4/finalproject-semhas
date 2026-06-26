@@ -6,52 +6,66 @@
       <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
     </div>
 
-    <div class="reveal d2" style="flex:1;min-height:0;padding-bottom:17cqh;display:flex;flex-direction:column;gap:1.4cqh;margin-top:0;">
+    <div class="reveal d2" style="flex:1;min-height:0;padding-bottom:17cqh;display:flex;flex-direction:column;gap:1.6cqh;margin-top:0;justify-content:center;">
 
-      <!-- Four parameter threshold tiles -->
-      <div class="l-grid" style="--cols:4;margin-top:0;gap:1.4cqw;flex:none;">
-        <div class="tile center reveal d2" style="padding:2cqh 1.2cqw;gap:.7cqh;">
-          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
-          <h3>pH</h3>
-          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:2.6cqw;">6,0 &ndash; 6,8</span>
-          <p>rentang optimum</p>
+      <!-- Parameter optimal-range bands -->
+      <div class="reveal d2" style="display:flex;flex-direction:column;gap:1cqh;">
+        <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Rentang optimum per parameter</div>
+
+        <!-- pH -->
+        <div style="display:flex;align-items:center;gap:1cqw;">
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.4cqw;width:5cqw;flex:none;">pH</span>
+          <svg viewBox="0 0 100 6" preserveAspectRatio="none" style="flex:1;height:2.4cqh;" role="img" aria-label="pH optimum 6,0 sampai 6,8 pada skala 0 sampai 14">
+            <rect x="0" y="1.6" width="100" height="2.8" rx="1.4" fill="var(--surface-2)" />
+            <rect x="42.86" y="1.6" width="5.71" height="2.8" rx="1" fill="#16A34A" />
+          </svg>
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:1.4cqw;width:11cqw;flex:none;text-align:right;">6,0 &ndash; 6,8</span>
         </div>
-        <div class="tile center reveal d3" style="padding:2cqh 1.2cqw;gap:.7cqh;">
-          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
-          <h3>Suhu</h3>
-          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:2.6cqw;">28 &ndash; 31 &deg;C</span>
-          <p>rentang optimum</p>
+
+        <!-- Suhu -->
+        <div style="display:flex;align-items:center;gap:1cqw;">
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.4cqw;width:5cqw;flex:none;">Suhu</span>
+          <svg viewBox="0 0 100 6" preserveAspectRatio="none" style="flex:1;height:2.4cqh;" role="img" aria-label="Suhu optimum 28 sampai 31 derajat pada skala 20 sampai 35">
+            <rect x="0" y="1.6" width="100" height="2.8" rx="1.4" fill="var(--surface-2)" />
+            <rect x="53.3" y="1.6" width="20" height="2.8" rx="1" fill="#16A34A" />
+          </svg>
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:1.4cqw;width:11cqw;flex:none;text-align:right;">28 &ndash; 31 &deg;C</span>
         </div>
-        <div class="tile center reveal d4" style="padding:2cqh 1.2cqw;gap:.7cqh;">
-          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
-          <h3>DO</h3>
-          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:2.6cqw;">&ge; 5,0 mg/L</span>
-          <p>batas minimum</p>
+
+        <!-- DO -->
+        <div style="display:flex;align-items:center;gap:1cqw;">
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.4cqw;width:5cqw;flex:none;">DO</span>
+          <svg viewBox="0 0 100 6" preserveAspectRatio="none" style="flex:1;height:2.4cqh;" role="img" aria-label="DO minimum 5,0 mg per liter pada skala 0 sampai 10">
+            <rect x="0" y="1.6" width="100" height="2.8" rx="1.4" fill="var(--surface-2)" />
+            <rect x="50" y="1.6" width="50" height="2.8" rx="1" fill="#16A34A" />
+          </svg>
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:1.4cqw;width:11cqw;flex:none;text-align:right;">&ge; 5,0 mg/L</span>
         </div>
-        <div class="tile center reveal d5" style="padding:2cqh 1.2cqw;gap:.7cqh;">
-          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
-          <h3>TDS</h3>
-          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:2.6cqw;">10 &ndash; 150 ppm</span>
-          <p>rentang optimum</p>
+
+        <!-- TDS -->
+        <div style="display:flex;align-items:center;gap:1cqw;">
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.4cqw;width:5cqw;flex:none;">TDS</span>
+          <svg viewBox="0 0 100 6" preserveAspectRatio="none" style="flex:1;height:2.4cqh;" role="img" aria-label="TDS optimum 10 sampai 150 ppm pada skala 0 sampai 300">
+            <rect x="0" y="1.6" width="100" height="2.8" rx="1.4" fill="var(--surface-2)" />
+            <rect x="3.33" y="1.6" width="46.67" height="2.8" rx="1" fill="#16A34A" />
+          </svg>
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:1.4cqw;width:11cqw;flex:none;text-align:right;">10 &ndash; 150 ppm</span>
         </div>
       </div>
 
-      <!-- Risk-index category legend -->
-      <div class="reveal d6" style="display:flex;flex-direction:column;gap:.8cqh;flex:1;min-height:0;justify-content:center;">
-        <div style="font-family:var(--font-head);font-weight:600;color:var(--ink);font-size:1.5cqw;">Kategori indeks risiko (RI)</div>
-        <div style="display:flex;gap:1.4cqw;">
-          <div style="flex:1;display:flex;align-items:center;gap:.8cqw;padding:1.4cqh 1.2cqw;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);">
-            <span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:#1aa564;flex:none;"></span>
-            <div><div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Baik</div><div style="color:var(--muted);font-size:1.2cqw;">RI 0,00 &ndash; 0,30</div></div>
-          </div>
-          <div style="flex:1;display:flex;align-items:center;gap:.8cqw;padding:1.4cqh 1.2cqw;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);">
-            <span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:#e3b400;flex:none;"></span>
-            <div><div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Waspada</div><div style="color:var(--muted);font-size:1.2cqw;">RI 0,31 &ndash; 0,60</div></div>
-          </div>
-          <div style="flex:1;display:flex;align-items:center;gap:.8cqw;padding:1.4cqh 1.2cqw;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);">
-            <span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:#d4322c;flex:none;"></span>
-            <div><div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Berisiko</div><div style="color:var(--muted);font-size:1.2cqw;">RI 0,61 &ndash; 1,00</div></div>
-          </div>
+      <!-- RI category bar (HTML, proporsi 30/30/40) -->
+      <div class="reveal d5" style="display:flex;flex-direction:column;gap:.9cqh;">
+        <div style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">Kategori indeks risiko (RI)</div>
+        <div style="display:flex;width:100%;height:4cqh;border-radius:.8cqw;overflow:hidden;">
+          <div style="flex:30;background:#1aa564;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-head);font-weight:700;font-size:1.4cqw;">Baik</div>
+          <div style="flex:30;background:#e3b400;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-head);font-weight:700;font-size:1.4cqw;">Waspada</div>
+          <div style="flex:40;background:#d4322c;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-head);font-weight:700;font-size:1.4cqw;">Berisiko</div>
+        </div>
+        <div style="position:relative;width:100%;height:1.6cqh;color:var(--muted);font-size:1.15cqw;">
+          <span style="position:absolute;left:0;">0,00</span>
+          <span style="position:absolute;left:30%;transform:translateX(-50%);">0,30</span>
+          <span style="position:absolute;left:60%;transform:translateX(-50%);">0,60</span>
+          <span style="position:absolute;right:0;">1,00</span>
         </div>
       </div>
 
