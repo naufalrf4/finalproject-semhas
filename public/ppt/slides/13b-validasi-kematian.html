@@ -10,30 +10,31 @@
 
       <!-- TOP: Mann-Whitney result stats -->
       <div style="display:flex;gap:1.2cqw;align-items:stretch;width:100%;">
-        <div class="stat reveal d2" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;"><em>U = 373,0</em></span><span class="lab">statistik Mann-Whitney</span></div>
-        <div class="stat reveal d2" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;"><em>p = 0,537</em></span><span class="lab">tidak signifikan (&alpha; = 0,05)</span></div>
-        <div class="stat reveal d3" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;">0,169</span><span class="lab">median RI hari kematian (n = 8)</span></div>
-        <div class="stat reveal d3" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;">0,142</span><span class="lab">median RI hari normal (n = 95)</span></div>
+        <div class="stat reveal d2" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;"><em>U = 535</em></span><span class="lab">statistik Mann-Whitney</span></div>
+        <div class="stat reveal d2" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;"><em>p &lt; 0,001</em></span><span class="lab">signifikan (&alpha; = 0,05)</span></div>
+        <div class="stat reveal d3" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;">0,323</span><span class="lab">rerata indeks risiko hari kematian (n = 6 tanggal)</span></div>
+        <div class="stat reveal d3" style="padding:1.2cqh 1cqw;align-items:center;text-align:center;flex:1;"><span class="big" style="font-size:2.4cqw;">0,094</span><span class="lab">rerata indeks risiko hari lainnya (n = 97)</span></div>
       </div>
 
-      <!-- MIDDLE: honest interpretation -->
+      <!-- MIDDLE: significant result interpretation -->
       <div class="tile reveal d4" style="background:var(--surface-2);flex-direction:row;align-items:flex-start;gap:1.2cqw;">
         <div class="iconchip" style="flex:none;"><svg><use href="#i-shield"/></svg></div>
         <div>
-          <h3>Tidak ada perbedaan signifikan</h3>
+          <h3>Indeks risiko berhasil membedakan kondisi berbahaya</h3>
           <p style="font-size:1.35cqw;color:var(--ink-soft);line-height:1.6;margin:.4cqh 0 0;">
-            Uji Mann-Whitney menunjukkan tidak terdapat perbedaan signifikan antara RI hari kematian dan hari normal
-            (<span style="font-style:italic;">U</span> = 373,0, <span style="font-style:italic;">p</span> = 0,537). Hasil ini
-            mengindikasikan keterbatasan indeks risiko berbasis empat parameter sensor kimia dalam menangkap stresor
-            non-kimia, seperti penyakit, agresi, dan kualitas pakan.
+            Rerata indeks risiko pada hari kematian ikan <strong>3,4 kali lebih tinggi</strong>
+            dibandingkan hari lainnya (0,323 vs 0,094). Uji Mann-Whitney menunjukkan perbedaan
+            yang sangat signifikan (<span style="font-style:italic;">p</span> &lt; 0,001),
+            mengindikasikan bahwa penurunan kualitas air yang terekam sensor berperan penting
+            dalam kejadian kematian. Nilai rank-biserial correlation <span style="font-style:italic;">r</span> = 0,84 menunjukkan kekuatan efek yang sangat besar.
           </p>
         </div>
       </div>
 
-      <!-- BOTTOM: honest positioning -->
+      <!-- BOTTOM: nuance about daily aggregation -->
       <div class="infocard reveal d5">
         <div class="iconchip"><svg><use href="#i-target"/></svg></div>
-        <div><h3>Peran indeks risiko</h3><p style="font-size:1.25cqw;">Indeks risiko berperan sebagai alat <span style="font-style:italic;">screening</span> kondisi air kronis, bukan prediktor kematian ikan.</p></div>
+        <div><h3>Keenam tanggal kematian tidak ada yang Baik</h3><p style="font-size:1.25cqw;">Tercatat delapan kejadian kematian pada enam tanggal berbeda: empat tanggal berkategori Berisiko (RI 0,251–0,489) dan dua tanggal Waspada (RI 0,136 serta 0,212). Dengan demikian, seluruh tanggal kematian berada di luar kategori Baik.</p></div>
       </div>
 
     </div>

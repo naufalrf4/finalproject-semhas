@@ -13,30 +13,31 @@
 
         <!-- LEFT: donut distribution -->
         <div class="reveal d3" style="display:flex;align-items:center;gap:1.3cqw;flex:none;">
-          <svg viewBox="0 0 36 36" style="width:13cqw;height:auto;font-family:Arial,Helvetica,sans-serif;" role="img" aria-label="Distribusi kategori indeks risiko: Baik 78,64 persen, Waspada 21,36 persen, Berisiko 0 persen">
+          <svg viewBox="0 0 36 36" style="width:13cqw;height:auto;font-family:Arial,Helvetica,sans-serif;" role="img" aria-label="Distribusi kategori indeks risiko: Baik 77,7 persen, Waspada 5,8 persen, Berisiko 16,5 persen">
             <circle cx="18" cy="18" r="15.9155" fill="none" stroke="var(--surface-2)" stroke-width="4" />
             <g transform="rotate(-90 18 18)">
-              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#16A34A" stroke-width="4" stroke-dasharray="78.64 21.36" stroke-dashoffset="0" />
-              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#EAB308" stroke-width="4" stroke-dasharray="21.36 78.64" stroke-dashoffset="-78.64" />
+              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#16A34A" stroke-width="4" stroke-dasharray="77.7 22.3" stroke-dashoffset="0" />
+              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#EAB308" stroke-width="4" stroke-dasharray="5.8 94.2" stroke-dashoffset="-77.7" />
+              <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#DC2626" stroke-width="4" stroke-dasharray="16.5 83.5" stroke-dashoffset="-83.5" />
             </g>
-            <text x="18" y="17.2" text-anchor="middle" font-size="6.4" font-weight="700" fill="#16A34A">78,64%</text>
+            <text x="18" y="17.2" text-anchor="middle" font-size="6.4" font-weight="700" fill="#16A34A">77,7%</text>
             <text x="18" y="22" text-anchor="middle" font-size="2.8" fill="#444466">kategori Baik</text>
           </svg>
           <div style="display:flex;flex-direction:column;gap:.8cqh;">
             <div style="display:flex;align-items:center;gap:.7cqw;">
               <span style="width:1.2cqw;height:1.2cqw;border-radius:.3cqw;background:#16A34A;flex:none;"></span>
-              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">81</span>
-              <span style="color:var(--muted);font-size:1.2cqw;">hari Baik &middot; 78,64%</span>
+              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">80</span>
+              <span style="color:var(--muted);font-size:1.2cqw;">hari Baik &middot; 77,7%</span>
             </div>
             <div style="display:flex;align-items:center;gap:.7cqw;">
               <span style="width:1.2cqw;height:1.2cqw;border-radius:.3cqw;background:#EAB308;flex:none;"></span>
-              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">22</span>
-              <span style="color:var(--muted);font-size:1.2cqw;">hari Waspada &middot; 21,36%</span>
+              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">6</span>
+              <span style="color:var(--muted);font-size:1.2cqw;">hari Waspada &middot; 5,8%</span>
             </div>
             <div style="display:flex;align-items:center;gap:.7cqw;">
               <span style="width:1.2cqw;height:1.2cqw;border-radius:.3cqw;background:#DC2626;flex:none;"></span>
-              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">0</span>
-              <span style="color:var(--muted);font-size:1.2cqw;">hari Berisiko &middot; 0%</span>
+              <span style="font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:1.5cqw;">17</span>
+              <span style="color:var(--muted);font-size:1.2cqw;">hari Berisiko &middot; 16,5%</span>
             </div>
           </div>
         </div>
@@ -45,11 +46,11 @@
         <div style="display:flex;flex-direction:column;gap:.8cqh;flex:1;justify-content:center;">
           <div class="infocard reveal d3" style="padding:1.4cqh 1.2cqw;">
             <div class="iconchip" style="width:2.8cqw;height:2.8cqw;"><svg style="width:1.5cqw;height:1.5cqw;"><use href="#i-target"/></svg></div>
-            <div><h3 style="font-size:1.5cqw;">RI rata-rata harian 0,195</h3><p style="font-size:1.2cqw;">Simpangan baku 0,185; rentang RI 0,005 (minimum) hingga 0,555 (maksimum).</p></div>
+            <div><h3 style="font-size:1.5cqw;">Indeks risiko rata-rata harian 0,108</h3><p style="font-size:1.2cqw;">Rentang indeks risiko 0,007 (minimum) hingga 0,489 (maksimum) sepanjang 103 hari. Kategori mengikuti skor parameter terburuk terhadap ambang WQI, bukan rata-rata keempat parameter.</p></div>
           </div>
           <div class="infocard reveal d3" style="padding:1.4cqh 1.2cqw;">
             <div class="iconchip" style="width:2.8cqw;height:2.8cqw;"><svg style="width:1.5cqw;height:1.5cqw;"><use href="#i-shield"/></svg></div>
-            <div><h3 style="font-size:1.5cqw;">Dominasi kategori Baik</h3><p style="font-size:1.2cqw;">Tidak ada hari Berisiko sepanjang 103 hari; kualitas air tergolong stabil.</p></div>
+            <div><h3 style="font-size:1.5cqw;">17 hari Berisiko didominasi TDS</h3><p style="font-size:1.2cqw;">TDS melampaui ambang pada 16 dari 17 hari Berisiko, disusul DO rendah; keduanya jadi target intervensi utama.</p></div>
           </div>
         </div>
 

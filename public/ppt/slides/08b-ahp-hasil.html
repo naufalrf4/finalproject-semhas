@@ -1,0 +1,72 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Metode &middot; Pembobotan AHP</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <div class="reveal d2" style="flex:1;min-height:0;padding-bottom:17cqh;display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw;margin-top:0;align-content:center;">
+
+      <!-- LEFT: aggregated matrix -->
+      <div style="display:flex;flex-direction:column;gap:1cqh;">
+
+        <div class="reveal d2" style="font-family:var(--font-head);font-weight:600;font-size:1.3cqw;">Hasil Penggabungan dan Bobot Prioritas</div>
+
+        <div class="reveal d3" style="font-size:1cqw;">
+          <div style="font-family:var(--font-head);font-weight:600;font-size:1.15cqw;margin-bottom:.5cqh;">Matriks gabungan (rata-rata geometris)</div>
+          <table class="dtable" style="width:100%;font-size:.95cqw;">
+            <thead>
+              <tr><th style="padding:.4cqh .3cqw;">&nbsp;</th><th>DO</th><th>pH</th><th>TDS</th><th>Suhu</th><th>Bobot</th></tr>
+            </thead>
+            <tbody>
+              <tr><td style="font-weight:600;">DO</td><td>1,000</td><td>1,291</td><td>3,873</td><td>2,236</td><td><strong>0,39</strong></td></tr>
+              <tr><td style="font-weight:600;">pH</td><td>0,775</td><td>1,000</td><td>3,873</td><td>2,236</td><td><strong>0,35</strong></td></tr>
+              <tr><td style="font-weight:600;">TDS</td><td>0,258</td><td>0,258</td><td>1,000</td><td>2,236</td><td><strong>0,14</strong></td></tr>
+              <tr><td style="font-weight:600;">Suhu</td><td>0,447</td><td>0,447</td><td>0,447</td><td>1,000</td><td><strong>0,12</strong></td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:.9cqw;color:var(--muted);margin-top:.4cqh;">Matriks gabungan = rata-rata geometris penilaian kedua responden. Bobot dari eigenvektor utama yang dinormalisasi.</p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: processing steps + consistency -->
+      <div style="display:flex;flex-direction:column;gap:.9cqh;">
+
+        <div class="reveal d3" style="font-family:var(--font-head);font-weight:600;font-size:1.2cqw;">Alur pengolahan</div>
+
+        <div class="reveal d3" style="display:flex;flex-direction:column;gap:.7cqh;">
+          <div class="step" style="flex-direction:row;align-items:flex-start;gap:.9cqw;padding-top:0;">
+            <div class="sn">1</div>
+            <div><h3 style="font-size:1.15cqw;">Kuesioner berpasangan</h3><p style="font-size:1cqw;margin:.2cqh 0 0;">Setiap responden membandingkan 6 pasangan parameter (DO, pH, TDS, suhu) menggunakan skala Saaty 1&ndash;9.</p></div>
+          </div>
+          <div class="reveal d4 step" style="flex-direction:row;align-items:flex-start;gap:.9cqw;padding-top:0;">
+            <div class="sn">2</div>
+            <div><h3 style="font-size:1.15cqw;">Penggabungan rata-rata geometris</h3><p style="font-size:1cqw;margin:.2cqh 0 0;">Matriks kedua responden digabung per elemen: a<sub>ij</sub> = &radic;(r<sub>1</sub> &times; r<sub>2</sub>).</p></div>
+          </div>
+          <div class="reveal d5 step" style="flex-direction:row;align-items:flex-start;gap:.9cqw;padding-top:0;">
+            <div class="sn">3</div>
+            <div><h3 style="font-size:1.15cqw;">Vektor prioritas (eigenvektor)</h3><p style="font-size:1cqw;margin:.2cqh 0 0;">Eigenvektor utama dari matriks gabungan dinormalisasi menjadi bobot prioritas.</p></div>
+          </div>
+          <div class="reveal d6 step" style="flex-direction:row;align-items:flex-start;gap:.9cqw;padding-top:0;">
+            <div class="sn">4</div>
+            <div><h3 style="font-size:1.15cqw;">Uji konsistensi Saaty</h3><p style="font-size:1cqw;margin:.2cqh 0 0;">&lambda;<sub>max</sub> = 4,246 &rarr; CI = 0,082 &rarr; <strong>CR = 0,091 &lt; 0,10</strong> (konsisten).</p></div>
+          </div>
+        </div>
+
+        <!-- Final weight strip -->
+        <div class="reveal d7 l-statrow" style="--cols:4;margin-top:.4cqh;gap:.6cqw;">
+          <div class="stat" style="padding:.8cqh .4cqw;"><span class="big" style="font-size:2.2cqw;"><em>0,39</em></span><span class="lab">DO</span></div>
+          <div class="stat" style="padding:.8cqh .4cqw;"><span class="big" style="font-size:2.2cqw;"><em>0,35</em></span><span class="lab">pH</span></div>
+          <div class="stat" style="padding:.8cqh .4cqw;"><span class="big" style="font-size:2.2cqw;"><em>0,14</em></span><span class="lab">TDS</span></div>
+          <div class="stat" style="padding:.8cqh .4cqw;"><span class="big" style="font-size:2.2cqw;"><em>0,12</em></span><span class="lab">Suhu</span></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d8"><img src="assets/footer-1.png" alt="" /></div>
+  </div>
+</section>
