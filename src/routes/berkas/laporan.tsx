@@ -15,5 +15,5 @@ function Laporan() {
       />
     )
   }
-  return <PdfViewer src="/pdf/laporan.pdf" title="Laporan" />
+  return <PdfViewer src="/pdf/laporan.pdf?v=20260719b" title="Laporan" />
 }

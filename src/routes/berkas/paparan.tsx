@@ -4,5 +4,5 @@ import { DeckEmbed } from "#/components/berkas/DeckEmbed"
 export const Route = createFileRoute("/berkas/paparan")({ component: Paparan })
 
 function Paparan() {
-  return <DeckEmbed src="/ppt/index.html" />
+  return <DeckEmbed src="/ppt/index.html?v=20260719b" />
 }
