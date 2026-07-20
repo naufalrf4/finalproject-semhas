@@ -1,0 +1,55 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Metode &middot; Indeks Risiko &amp; Pembobotan AHP</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <div class="reveal d2 c-ahp-grid">
+
+      <div class="col gap-[1cqh]">
+        <div class="c-ahp-sec-title">Bobot dari dua pakar diskus (AHP)</div>
+        <table class="dtable">
+          <thead>
+            <tr>
+              <th class="c-ahp-tbl-header">Parameter</th>
+              <th class="c-ahp-tbl-header text-center">Bobot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Oksigen terlarut (DO)</td><td class="c-ahp-tbl-saaty">0,39</td></tr>
+            <tr><td>pH</td><td class="c-ahp-tbl-saaty">0,35</td></tr>
+            <tr><td>Padatan terlarut (TDS)</td><td class="c-ahp-tbl-saaty">0,14</td></tr>
+            <tr><td>Suhu</td><td class="c-ahp-tbl-saaty">0,12</td></tr>
+          </tbody>
+        </table>
+        <p class="c-ahp-sub m-0">Dua pembudidaya (19 &amp; 8 tahun). Konsistensi jawaban CR = <strong>0,091</strong> (&lt; 0,10) yang menunjukkan bobot sah dipakai.</p>
+        <p class="c-ahp-sub-lower">DO bobot tertinggi: kekurangan oksigen berdampak cepat dan mematikan.</p>
+      </div>
+
+      <div class="col gap-[1.2cqh]">
+        <div class="c-ahp-sec-title">Cara kategori ditentukan</div>
+        <div class="c-ahp-formula-tile">
+          <div class="c-ahp-formula">RI = 0,39·DO + 0,35·pH + 0,14·TDS + 0,12·suhu</div>
+          <p class="c-ahp-formula-desc">Indeks gabungan 0–1 (ringkasan keparahan). Kategori <strong>bukan</strong> dari rata-rata ini.</p>
+        </div>
+        <div class="c-ahp-cat-strip">
+          <div class="c-ahp-cat-item" style="background:var(--cat-baik); flex:5;">Baik &lt; 0,50</div>
+          <div class="c-ahp-cat-item" style="background:var(--cat-waspada); flex:2.5; color:#1a1a1a;">0,50–0,75</div>
+          <div class="c-ahp-cat-item" style="background:var(--cat-berisiko); flex:2.5;">&gt; 0,75</div>
+        </div>
+        <div class="infocard">
+          <div class="iconchip"><svg><use href="#i-alert"/></svg></div>
+          <div>
+            <p class="text-[1.05cqw] m-0"><strong>Aturan parameter terburuk:</strong> kategori harian mengikuti skor parameter yang paling kritis. Meskipun hanya ada satu parameter kritis, hal tersebut sudah cukup untuk menaikkan tingkat kategori. Ini bertujuan agar kondisi berbahaya tidak tertutup oleh nilai rata-rata dari parameter lain yang berstatus baik.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d8"><img src="assets/footer-1.png" alt="" /></div>
+    <div class="foot"><span class="pg" data-pagenum></span></div>
+  </div>
+</section>

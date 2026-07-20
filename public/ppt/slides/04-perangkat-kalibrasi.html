@@ -1,0 +1,61 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Metode &middot; Perangkat Keras &amp; Kalibrasi</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <div class="l-split reveal d2 c-slide-content-wrapper items-center gap-[2.4cqw]">
+
+      <div class="flex flex-col items-center justify-center h-full min-h-0 gap-[1cqh]">
+        <figure class="m-0 flex flex-col gap-[.5cqh] items-center">
+          <img src="assets/fig/elsa-tampak-luar.jpg" alt="Perangkat ELSA" class="c-device-img" />
+          <figcaption class="text-[1cqw] text-muted text-center">ELSA: ESP32 + 4 sensor (pH, suhu, DO, TDS)</figcaption>
+        </figure>
+        <div class="c-device-fig-row">
+          <figure class="c-device-subfig">
+            <img src="assets/kalibrasi-ph-buffer.jpg" alt="Buffer pH" />
+            <figcaption class="text-[.85cqw] text-muted">Buffer pH 4 &amp; 7</figcaption>
+          </figure>
+          <figure class="c-device-subfig">
+            <img src="assets/kalibrasi-tds-larutan.jpg" alt="Larutan TDS" />
+            <figcaption class="text-[.85cqw] text-muted">Larutan TDS</figcaption>
+          </figure>
+          <figure class="c-device-subfig">
+            <img src="assets/kalibrasi-do-larutan.jpg" alt="Larutan DO" />
+            <figcaption class="text-[.85cqw] text-muted">Larutan DO</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col gap-[1.2cqh]">
+        <div class="infocard">
+          <div class="iconchip"><svg><use href="#i-shield"/></svg></div>
+          <div>
+            <h3 class="text-[1.3cqw]">Pembacaan stabil</h3>
+            <p class="text-[1.05cqw] m-0">Sensor analog dibaca lewat ADC 16-bit. Sensor pH dipasang isolator agar tidak saling mengganggu di air yang sama.</p>
+          </div>
+        </div>
+        <div class="infocard">
+          <div class="iconchip"><svg><use href="#i-gear"/></svg></div>
+          <div>
+            <h3 class="text-[1.3cqw]">Data tidak hilang saat offline</h3>
+            <p class="text-[1.05cqw] m-0">Bila koneksi WiFi terputus, data akan disimpan di memori perangkat terlebih dahulu. Data kemudian dikirim ulang secara otomatis saat perangkat kembali terhubung ke internet. Hal ini memastikan kelengkapan deret data selama 103 hari tetap utuh.</p>
+          </div>
+        </div>
+        <div class="infocard">
+          <div class="iconchip"><svg><use href="#i-spark"/></svg></div>
+          <div>
+            <h3 class="text-[1.3cqw]">Kalibrasi sebelum dipakai</h3>
+            <p class="text-[1.05cqw] m-0"><strong>pH:</strong> dua titik (buffer 4,00 &amp; 7,00)<br/><strong>TDS:</strong> larutan standar + koreksi suhu<br/><strong>DO:</strong> titik nol &amp; air jenuh oksigen</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+    <div class="foot"><span class="pg" data-pagenum></span></div>
+  </div>
+</section>

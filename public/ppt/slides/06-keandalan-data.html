@@ -1,0 +1,59 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Hasil &middot; Keandalan &amp; Pembersihan Data</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <div class="reveal d2 c-slide-content-wrapper flex flex-col gap-[1.4cqh]">
+
+      <div class="l-statrow" style="--cols:3;">
+        <div class="stat reveal d2">
+          <div class="iconchip mx-auto mb-[.4cqh]"><svg><use href="#i-cal"/></svg></div>
+          <div class="num">103</div>
+          <div class="lbl">Hari operasi kontinu</div>
+        </div>
+        <div class="stat reveal d3">
+          <div class="iconchip mx-auto mb-[.4cqh]"><svg><use href="#i-db"/></svg></div>
+          <div class="num">271.040</div>
+          <div class="lbl">Baris terekam mentah</div>
+        </div>
+        <div class="stat reveal d4">
+          <div class="iconchip mx-auto mb-[.4cqh]"><svg><use href="#i-check"/></svg></div>
+          <div class="num text-cat-baik">99,24%</div>
+          <div class="lbl">Data bersih (268.968 baris)</div>
+        </div>
+      </div>
+
+      <div class="reveal d5 flex-1 min-h-0 flex flex-col gap-[.8cqh]">
+        <div class="font-head font-semibold text-[1.3cqw] text-primary">Pembersihan galat sensor (dibuang 2.072 baris, atau 0,76%)</div>
+        <table class="dtable w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Parameter</th>
+              <th class="text-left">Kriteria dibuang</th>
+              <th>Jumlah</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="text-left font-semibold">pH</td><td class="text-left">pH &gt; 10</td><td>472 baris</td></tr>
+            <tr><td class="text-left font-semibold">Suhu</td><td class="text-left">di bawah 15&deg;C atau di atas 40&deg;C</td><td>1.200 baris</td></tr>
+            <tr><td class="text-left font-semibold">Oksigen Terlarut (DO)</td><td class="text-left">di bawah 0 atau di atas 15 mg/L</td><td>400 baris</td></tr>
+            <tr><td class="text-left font-semibold">Padatan Terlarut (TDS)</td><td class="text-left">di bawah 0 ppm</td><td>0 baris</td></tr>
+          </tbody>
+        </table>
+        <div class="infocard">
+          <div class="iconchip"><svg><use href="#i-shield"/></svg></div>
+          <div>
+            <p class="text-[1.1cqw] m-0">Data terekam lengkap tanpa nilai kosong karena perangkat menyimpan data sementara saat internet putus, lalu mengirim ulang saat online.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+    <div class="foot"><span class="pg" data-pagenum></span></div>
+  </div>
+</section>

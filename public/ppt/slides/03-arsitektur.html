@@ -1,0 +1,76 @@
+<section class="slide">
+  <div class="pad">
+
+    <div class="topbar reveal d1">
+      <div class="kicker">Metode &middot; Arsitektur Sistem ELSA</div>
+      <div class="brand"><img src="assets/logo-svipb.png" alt="Sekolah Vokasi IPB" /></div>
+    </div>
+
+    <p class="reveal d2 text-[1.15cqw] text-muted m-0 mb-[1cqh]">Empat lapisan: dari sensor di akuarium sampai notifikasi di ponsel pengguna.</p>
+
+    <div class="reveal d3 c-arch-grid">
+
+      <div class="c-arch-card">
+        <div class="c-arch-card-head">
+          <div class="iconchip"><svg><use href="#i-layers"/></svg></div>
+          <div class="c-arch-num-pill">1</div>
+          <div class="c-arch-title">Perangkat</div>
+        </div>
+        <div class="c-arch-chips">
+          <span class="chip">ESP32-S3</span>
+          <span class="chip">pH</span>
+          <span class="chip">Suhu</span>
+          <span class="chip">DO</span>
+          <span class="chip">TDS</span>
+        </div>
+        <p class="c-arch-desc">Bila WiFi putus, data disimpan dulu di perangkat lalu dikirim ulang saat online.</p>
+      </div>
+
+      <div class="c-arch-card">
+        <div class="c-arch-card-head">
+          <div class="iconchip"><svg><use href="#i-flow"/></svg></div>
+          <div class="c-arch-num-pill">2</div>
+          <div class="c-arch-title">Komunikasi</div>
+        </div>
+        <div class="c-arch-chips">
+          <span class="chip">Firebase RTDB</span>
+          <span class="chip">Login API</span>
+          <span class="chip">Backfill</span>
+        </div>
+        <p class="c-arch-desc">Data dikirim ke cloud secara near real-time agar dashboard selalu menampilkan kondisi terkini.</p>
+      </div>
+
+      <div class="c-arch-card">
+        <div class="c-arch-card-head">
+          <div class="iconchip"><svg><use href="#i-gear"/></svg></div>
+          <div class="c-arch-num-pill">3</div>
+          <div class="c-arch-title">Aplikasi web</div>
+        </div>
+        <div class="c-arch-chips">
+          <span class="chip">Next.js</span>
+          <span class="chip">Indeks risiko</span>
+          <span class="chip">Notifikasi</span>
+        </div>
+        <p class="c-arch-desc">Hitung indeks, tampilkan dashboard, kirim WhatsApp / Telegram / PWA saat kategori berubah.</p>
+      </div>
+
+      <div class="c-arch-card">
+        <div class="c-arch-card-head">
+          <div class="iconchip"><svg><use href="#i-db"/></svg></div>
+          <div class="c-arch-num-pill">4</div>
+          <div class="c-arch-title">Penyimpanan</div>
+        </div>
+        <div class="c-arch-chips">
+          <span class="chip">RTDB live</span>
+          <span class="chip">Firestore</span>
+          <span class="chip">TimescaleDB</span>
+        </div>
+        <p class="c-arch-desc">Berjenjang: cepat untuk live, arsip jangka pendek, dan deret waktu untuk analisis 103 hari.</p>
+      </div>
+
+    </div>
+
+    <div class="foot-img reveal d6"><img src="assets/footer-1.png" alt="" /></div>
+    <div class="foot"><span class="pg" data-pagenum></span></div>
+  </div>
+</section>
