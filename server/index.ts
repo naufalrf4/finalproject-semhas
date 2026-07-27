@@ -127,18 +127,20 @@ app.post("/api/chat", async (c) => {
 })
 
 app.get("/api/stream", (c) => {
+  c.header("Content-Type", "text/event-stream")
+  c.header("Cache-Control", "no-cache, no-transform")
+  c.header("Connection", "keep-alive")
+  c.header("X-Accel-Buffering", "no")
   return stream(c, async (s) => {
-    c.header("Content-Type", "text/event-stream")
-    c.header("Cache-Control", "no-cache")
-    c.header("Connection", "keep-alive")
     const connId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
     const send = (event: string, data: unknown) =>
-      s.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`)
+      s.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`).catch(() => {})
     heartbeat(connId)
     const unsub = subscribe((event, data) => {
       void send(event, data)
     })
-    await send("presence", { online: presenceCount() })
+    void s.write("retry: 3000\n\n").catch(() => {})
+    void send("presence", { online: presenceCount() })
     publish("presence", { online: presenceCount() })
     const ping = setInterval(() => {
       heartbeat(connId)
@@ -148,13 +150,17 @@ app.get("/api/stream", (c) => {
       () => void send("presence", { online: presenceCount() }),
       15000,
     )
-    s.onAbort(() => {
+    let cleaned = false
+    const cleanup = () => {
+      if (cleaned) return
+      cleaned = true
       clearInterval(ping)
       clearInterval(presence)
       unsub()
       drop(connId)
       publish("presence", { online: presenceCount() })
-    })
+    }
+    s.onAbort(cleanup)
     await new Promise<void>((resolve) => s.onAbort(resolve))
   })
 })

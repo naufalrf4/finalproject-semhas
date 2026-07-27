@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useReducer } from "react"
 import {
   FOOD_ITEMS,
+  FOODS_PER_ROUND,
   ROUND_TARGETS,
   ROUND_TIME_MS,
   SKIM,
@@ -19,6 +20,7 @@ type GameState = {
   score: number
   timeLeft: number
   picked: string[]
+  offer: FoodItem[]
 }
 
 type GameAction =
@@ -30,7 +32,48 @@ type GameAction =
 
 function roundConfig(round: number) {
   const idx = Math.min(round, ROUND_TARGETS.length - 1)
-  return { target: ROUND_TARGETS[idx], time: ROUND_TIME_MS[idx] }
+  return {
+    target: ROUND_TARGETS[idx],
+    time: ROUND_TIME_MS[idx],
+    count: FOODS_PER_ROUND[idx],
+  }
+}
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+function canReach(items: FoodItem[], target: number): boolean {
+  let sums = new Set<number>([0])
+  for (const item of items) {
+    const next = new Set(sums)
+    for (const s of sums) {
+      const v = s + item.points
+      if (v <= target) next.add(v)
+    }
+    sums = next
+  }
+  return sums.has(target)
+}
+
+function pickOffer(round: number, target: number): FoodItem[] {
+  const { count } = roundConfig(round)
+  for (let attempt = 0; attempt < 60; attempt += 1) {
+    const offer = shuffle(FOOD_ITEMS).slice(0, count)
+    if (canReach(offer, target)) {
+      return [...offer].sort((a, b) => a.points - b.points)
+    }
+  }
+  const anchor = FOOD_ITEMS.reduce((prev, cur) =>
+    Math.abs(cur.points - target) < Math.abs(prev.points - target) ? cur : prev,
+  )
+  const rest = shuffle(FOOD_ITEMS.filter((f) => f.id !== anchor.id)).slice(0, count - 1)
+  return [anchor, ...rest].sort((a, b) => a.points - b.points)
 }
 
 function initRound(round: number, score: number, water: number): GameState {
@@ -44,6 +87,7 @@ function initRound(round: number, score: number, water: number): GameState {
     score,
     timeLeft: time,
     picked: [],
+    offer: pickOffer(round, target),
   }
 }
 
@@ -56,6 +100,7 @@ const INITIAL: GameState = {
   score: 0,
   timeLeft: ROUND_TIME_MS[0],
   picked: [],
+  offer: [],
 }
 
 const TICK_MS = 100
@@ -98,6 +143,7 @@ function reducer(state: GameState, action: GameAction): GameState {
           water,
           total: 0,
           picked: [],
+          offer: pickOffer(state.round, state.target),
         }
       }
       return { ...state, timeLeft }
@@ -125,5 +171,5 @@ export function useFeedGame() {
   const next = useCallback(() => dispatch({ type: "next" }), [])
   const reset = useCallback(() => dispatch({ type: "reset" }), [])
 
-  return { state, start, add, next, reset, foods: FOOD_ITEMS, skim: SKIM, waterMax: WATER_MAX }
+  return { state, start, add, next, reset, foods: state.offer, skim: SKIM, waterMax: WATER_MAX }
 }

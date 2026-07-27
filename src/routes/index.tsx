@@ -4,6 +4,8 @@ import { getConfig } from "#/lib/config"
 import { useSfx } from "#/lib/sfx"
 import { HubGrid } from "#/components/home/HubGrid"
 import { HubCard } from "#/components/home/HubCard"
+import { SemhasModal } from "#/components/home/SemhasModal"
+import { SEMHAS_WHEN_LABEL } from "#/lib/semhas"
 
 export const Route = createFileRoute("/")({ component: Home })
 
@@ -47,6 +49,7 @@ function Home() {
   const sfx = useSfx()
   const [zoomReady, setZoomReady] = useState(false)
   const [zoomLink, setZoomLink] = useState("")
+  const [modalOpen, setModalOpen] = useState(false)
 
   useEffect(() => {
     const config = getConfig()
@@ -54,10 +57,9 @@ function Home() {
     setZoomLink(config.zoomLink)
   }, [])
 
-  const openZoom = () => {
-    if (!zoomReady || !zoomLink) return
+  const openSemhas = () => {
     sfx("open")
-    window.open(zoomLink, "_blank", "noopener,noreferrer")
+    setModalOpen(true)
   }
 
   return (
@@ -108,15 +110,22 @@ function Home() {
               desc={
                 zoomReady
                   ? "Gabung ruang seminar hasil sekarang."
-                  : "Belum dibuka. Nantikan jadwal seminar."
+                  : SEMHAS_WHEN_LABEL
               }
-              onClick={openZoom}
-              locked={!zoomReady}
+              onClick={openSemhas}
+              locked={false}
               accent="gold"
             />
           </div>
         </HubGrid>
       </div>
+
+      <SemhasModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        zoomReady={zoomReady}
+        zoomLink={zoomLink}
+      />
     </section>
   )
 }

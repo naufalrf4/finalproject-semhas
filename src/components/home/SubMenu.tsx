@@ -38,9 +38,11 @@ export function SubMenu({ title, crumb, items }: SubMenuProps) {
         </Link>
 
         <header className="flex flex-col gap-2 animate-[pixel-rise_0.4s_ease-out_both]">
-          <p className="text-ink-soft text-sm" style={{ fontFamily: "var(--font-pixel)" }}>
-            {crumb}
-          </p>
+          {crumb !== title && !title.startsWith(crumb) ? (
+            <p className="text-ink-soft text-sm" style={{ fontFamily: "var(--font-pixel)" }}>
+              {crumb}
+            </p>
+          ) : null}
           <h1 className="text-aqua text-xl leading-tight" style={{ fontFamily: "var(--font-pixel)" }}>
             {title}
           </h1>

@@ -34,6 +34,28 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
   const [loading, setLoading] = useState(true)
   const [failed, setFailed] = useState(false)
   const [reloadKey, setReloadKey] = useState(0)
+  const [pageDraft, setPageDraft] = useState("1")
+
+  useEffect(() => {
+    setPageDraft(String(pageNumber))
+  }, [pageNumber])
+
+  const goToPage = (raw: string) => {
+    const parsed = Number.parseInt(raw, 10)
+    if (!Number.isFinite(parsed)) {
+      setPageDraft(String(pageNumber))
+      return
+    }
+    const clamped = Math.min(Math.max(1, parsed), numPages || 1)
+    sfx("nav")
+    setPageNumber(clamped)
+  }
+
+  const onItemClick = useCallback(({ pageNumber: target }: { pageNumber: number }) => {
+    if (!Number.isFinite(target)) return
+    sfx("nav")
+    setPageNumber(target)
+  }, [sfx])
 
   const onLoadSuccess = useCallback(({ numPages: total }: { numPages: number }) => {
     setNumPages(total)
@@ -138,10 +160,27 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
           <ArrowLeft className="h-4 w-4" />
         </button>
         <span
-          className="min-w-[5.5rem] text-center text-ink"
+          className="flex items-center gap-1 text-center text-ink"
           style={{ fontFamily: "var(--font-pixel)", fontSize: "0.6rem" }}
         >
-          {failed ? "0 / 0" : `${pageNumber} / ${numPages || "?"}`}
+          <input
+            type="text"
+            inputMode="numeric"
+            aria-label="Ke halaman"
+            value={pageDraft}
+            disabled={failed || numPages === 0}
+            onChange={(e) => setPageDraft(e.target.value.replace(/[^0-9]/g, ""))}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault()
+                goToPage(pageDraft)
+              }
+            }}
+            onBlur={() => goToPage(pageDraft)}
+            className="w-10 border-b border-ink/30 bg-transparent text-center text-ink outline-none disabled:opacity-40"
+            style={{ fontFamily: "var(--font-pixel)", fontSize: "0.6rem" }}
+          />
+          / {numPages || "?"}
         </span>
         <button
           type="button"
@@ -217,6 +256,9 @@ export function PdfViewer({ src, title }: PdfViewerProps) {
           file={src}
           onLoadSuccess={onLoadSuccess}
           onLoadError={onLoadError}
+          onItemClick={onItemClick}
+          externalLinkTarget="_blank"
+          externalLinkRel="noopener noreferrer"
           loading={skeleton}
           error={errorBox}
           className="flex justify-center"
