@@ -296,18 +296,7 @@ export const QA_DATA: QaItem[] = [
       "Sumber umum tetap dipakai sebagai pelengkap untuk ambang yang belum ada versi diskus-nya, misalnya ambang DO.",
       "Rentang optimal ini tidak boleh diklaim berlaku identik untuk semua diskus. Strain, umur, kepadatan, dan tata laksana bisa mengubah respons.",
     ],
-    suggests: ["qa-kebaruan-2", "qa-metodologi-8"],
-  },
-  {
-    id: "qa-kebaruan-2",
-    category: "kebaruan",
-    question: "Ada berapa rujukan di daftar pustaka, dan apakah cukup untuk laporan D4?",
-    answer: [
-      "58 entri daftar pustaka, tersebar di 5 bab. Bab 5 tanpa sitasi, sesuai kaidah PPKI karena simpulan dari hasil sendiri.",
-      "Kecukupan saya nilai dari keterwakilan topik: diskus, kualitas air, sensor, IoT, AHP, WQI, statistik, dan basis data, bukan sekadar jumlah.",
-      "Ada 1 sitasi diri Mindara et al. 2025 untuk prosedur kalibrasi DO dua mode. Relevan langsung, bukan untuk menambah jumlah artifisial.",
-    ],
-    suggests: ["qa-kebaruan-1", "qa-keterbatasan-3"],
+    suggests: ["qa-metodologi-8", "qa-keterbatasan-3"],
   },
   {
     id: "qa-keterbatasan-1",
