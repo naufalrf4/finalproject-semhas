@@ -12,12 +12,14 @@
     "slides/07-statistik-tren.html",
     "slides/08-pola-korelasi.html",
     "slides/09-distribusi-indeks.html",
-    "slides/10-validasi-kematian.html",
-    "slides/11-dashboard.html",
-    "slides/12-notifikasi.html",
-    "slides/13-pola-korelasi.html",
-    "slides/14-distribusi-validasi.html",
-    "slides/15-simpulan-saran.html",
-    "slides/16-closing.html"
+    "slides/10-notifikasi-gabungan.html",
+    "slides/11-validasi-kematian.html",
+    "slides/12-dashboard.html",
+    "slides/13-notifikasi.html",
+    "slides/14-pola-korelasi.html",
+    "slides/15-distribusi-validasi.html",
+    "slides/16-simpulan-saran.html",
+    "slides/17-video-demo.html",
+    "slides/18-closing.html"
   ]
 }
