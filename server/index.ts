@@ -26,7 +26,7 @@ app.get("/api/health", (c) => c.json({ ok: true }))
 app.get("/api/config", (c) =>
   c.json({
     semhasOnline: process.env.SEMHAS_ONLINE === "true",
-    zoomLink: process.env.SEMHAS_ONLINE === "true" ? process.env.ZOOM_LINK ?? "" : "",
+    zoomLink: process.env.ZOOM_LINK ?? "",
     laporanUnlocked: process.env.LAPORAN_UNLOCKED === "true",
   }),
 )

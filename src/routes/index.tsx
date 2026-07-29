@@ -53,7 +53,7 @@ function Home() {
 
   useEffect(() => {
     const config = getConfig()
-    setZoomReady(config.semhasOnline && config.zoomLink.length > 0)
+    setZoomReady(config.zoomLink.length > 0)
     setZoomLink(config.zoomLink)
   }, [])
 

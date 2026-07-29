@@ -28,7 +28,7 @@ import {
 const STEPS = [
   "Daftar dulu lewat FRIDA SV IPB supaya kehadiran tercatat.",
   "Simpan jadwalnya di Google Calendar biar tidak terlewat.",
-  "Tombol Zoom terbuka satu jam sebelum seminar dimulai.",
+  "Klik tombol Zoom untuk masuk ke ruang seminar.",
 ]
 
 type SemhasModalProps = {
@@ -88,7 +88,7 @@ function Body({
   }, [])
 
   const gcalUrl = buildGoogleCalendarUrl(zoomLink)
-  const zoomOpen = zoomReady && countdown.zoomOpen
+  const zoomOpen = zoomReady
 
   const openZoom = () => {
     if (!zoomOpen || !zoomLink) return
@@ -202,9 +202,7 @@ function Body({
         </button>
         {!zoomOpen ? (
           <p className="text-center text-ink-soft text-xs">
-            {zoomReady
-              ? "Tombol Zoom terbuka satu jam sebelum seminar dimulai."
-              : "Link Zoom belum aktif."}
+            Link Zoom belum aktif.
           </p>
         ) : null}
       </div>
