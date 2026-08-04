@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd \\\"C:/Users/Administrator/Documents/naufalrf/TUGAS AKHIR/code/elsaiot-semhas-web\\\" && git push origin main\",\"timeout\":60000,\"description\":\"Push deploy repo (finalproject-semhas) to origi...",
-  "error": "Exit code 1\nTo https://github.com/naufalrf4/finalproject-semhas.git\n ! [rejected]        main -> main (fetch first)\nerror: failed to push some refs to 'https://github.com/naufalrf4/finalproject-semhas.git'\nhint: Updates were rejected because the remote contains work that you do not\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-fo...",
-  "timestamp": "2026-07-28T20:18:09.480Z",
-  "retry_count": 1
-}
